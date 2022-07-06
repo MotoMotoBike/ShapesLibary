@@ -11,7 +11,7 @@ namespace Shapes.Shapes
     {
         public readonly double[] Sides = { 0, 0, 0 };
 
-        public readonly double p;
+        public readonly double halfPerimeter;
 
         public readonly bool isRight;
 
@@ -26,12 +26,12 @@ namespace Shapes.Shapes
             {
                 isRight = IsTrangleRight();
 
-                p = Sides.Sum() / 2; // Полупериметр
-                S = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+                halfPerimeter = Sides.Sum() / 2; // Полупериметр
+                Square = Math.Sqrt(halfPerimeter * (halfPerimeter - a) * (halfPerimeter - b) * (halfPerimeter - c));
             }
             else
             {
-                throw new ShapeNotExistsExeption("Фигура не существует");
+                throw new ShapeNotExistsException("Фигура не существует");
             }
         }
 
@@ -40,7 +40,7 @@ namespace Shapes.Shapes
             double max = Sides.Max();
             double[] others = Sides.Where(i => i != max).ToArray();
 
-            if (others.Length == 1)
+            if (others.Length == 1 || others.Length == 0)
             {
                 return true;
             }
@@ -60,7 +60,7 @@ namespace Shapes.Shapes
             double[] others = Sides.Where(i => i != max).ToArray();
 
             if (others.Length == 2)
-            {
+            {   
                 if ((max * max) == (others[0] * others[0]) + (others[1] * others[1]))
                 {
                     return true;

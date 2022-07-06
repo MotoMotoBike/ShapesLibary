@@ -8,11 +8,11 @@ namespace Shapes
 {
     public abstract class Shape
     {
-        public double GetSquare() { return S; }
+        public virtual double GetSquare() { return Square; }
 
         public abstract string Name { get; }
 
-        public double S;
+        public double Square { get; protected set; }
 
     }
 }

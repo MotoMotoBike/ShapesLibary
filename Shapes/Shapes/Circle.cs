@@ -9,21 +9,21 @@ namespace Shapes.Shapes
 {
     public class Circle : Shape
     {
-        public readonly double R;
+        public readonly double radius;
 
         public override string Name => "Круг";
 
-        public Circle(double R)
+        public Circle(double radius)
         {
-            this.R = R;
+            this.radius = radius;
 
-            if (R > 0)
+            if (radius > 0)
             {
-                S = Math.PI * (R * R);
+                Square = Math.PI * (radius * radius);
             }
             else
             {
-                throw new ShapeNotExistsExeption("Фигура не существует");
+                throw new ShapeNotExistsException("Фигура не существует");
             }
         }
     }

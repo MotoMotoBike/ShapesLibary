@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Shapes.Exeptions
 {
-    class ShapeNotExistsExeption : Exception
+    class ShapeNotExistsException : Exception
     {
-        public ShapeNotExistsExeption(string mesage)
-            : base(mesage) { }
+        public ShapeNotExistsException(string message)
+            : base(message) { }
     }
 }
