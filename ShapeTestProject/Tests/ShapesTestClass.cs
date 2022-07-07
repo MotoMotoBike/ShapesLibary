@@ -25,7 +25,7 @@ namespace Shapes.Tests
         }
 
         [TestMethod]
-        public void TrangleSqare6_InputIs3_4_5ReturnTrue()
+        public void TrangleSqare_InputIs3_4_5Return6()
         {
             // Arrange
             Trangle trangle = new(3, 4, 5);
@@ -34,7 +34,20 @@ namespace Shapes.Tests
             double res = trangle.GetSquare();
 
             // Assert
-            Assert.Equals(res,(double)6.0);
+            Assert.AreEqual(res,6.0);
+        }
+
+        [TestMethod]
+        public void CircleSqare_InputIs1_5Return3_141592653589793()
+        {
+            // Arrange
+            Circle circle = new(1);
+
+            // Act
+            double res = circle.GetSquare();
+
+            // Assert
+            Assert.AreEqual(res, 3.141592653589793);
         }
     }
 }
